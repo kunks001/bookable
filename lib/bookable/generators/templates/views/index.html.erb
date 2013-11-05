@@ -1,0 +1,11 @@
+<h3><%=folder_name.singularize%></h3>
+
+<%% @<%=folder_name%>.each do |resource| %>
+  <div class="resource">
+    <%%= resource.name %>
+    <%%= link_to "Show all bookings", <%=folder_name.singularize%>_bookings_path(<%=folder_name.singularize%>) %>
+    <%%= link_to "Delete", <%=folder_name.singularize%>_path(<%=folder_name.singularize%>), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <%%= link_to "Edit", edit_<%=folder_name.singularize%>_path(<%=folder_name.singularize%>) %>
+    <%%= link_to "Add booking", new_<%=folder_name.singularize%>_booking_path(<%=folder_name.singularize%>) %>
+  </div>
+<%% end %>

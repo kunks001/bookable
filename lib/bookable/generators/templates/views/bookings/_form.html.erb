@@ -1,0 +1,11 @@
+<%%= form_for([@<%=folder_name.singularize%>, @booking]) do |f| %>
+  <p>
+    <%%= f.label 'start_time', 'Start time' %>
+    <%%= f.datetime_select :start_time, { minute_step: 15 } %>
+  </p>
+  <p>
+    <%%= f.label 'length', 'Length of booking in hours' %>
+    <%%= f.number_field 'length', min: 1 %>
+  </p>
+  <%%= f.submit 'Submit' %>
+<%% end %> 

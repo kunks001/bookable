@@ -1,0 +1,6 @@
+<%%= form_for @<%=folder_name.singularize%> do |f| %>
+  <%%= render 'errors' %>
+  <%%= f.label 'name', 'Name' %>
+  <%%= f.text_field 'name', placeholder: 'Name'%>
+  <%%= f.submit 'Submit' %>
+<%% end %>

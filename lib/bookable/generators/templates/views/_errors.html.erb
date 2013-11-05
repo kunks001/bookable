@@ -1,0 +1,13 @@
+<%% if @<%=folder_name.singularize%>.errors.any? %>
+  <div class="errors">
+    <h3>
+      <%%= pluralize(@<%=folder_name.singularize%>.errors.count, 'error') %>
+      prohibited this <%=folder_name.singularize%> from being saved:
+    </h3>
+    <ul>
+      <%% @<%=folder_name.singularize%>.errors.full_messages.each do |message| %>
+        <li><%%= message %></li>
+      <%% end %>
+    </ul>
+  </div>
+<%% end %>

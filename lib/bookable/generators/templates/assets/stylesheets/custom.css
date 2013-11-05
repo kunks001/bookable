@@ -1,0 +1,29 @@
+*{
+  font-family: Helvetica;
+}
+
+.wrapper {
+  width:60%;
+  border:1px solid gray;
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+input[type="number"] { 
+  width:30px; 
+}
+
+table{
+  font-size: 14px;
+  color: gray;
+}
+
+.errors {
+  color:#c00;
+}
+
+.calendar_container {
+	margin: auto;
+	width: 80%;
+}
