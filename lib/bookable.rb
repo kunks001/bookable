@@ -1,6 +1,2 @@
-
-require "bookable/version"
-
-module Bookable
-  # Your code goes here...
-end
+require 'bookable/version'
+require 'bookable/railtie'
