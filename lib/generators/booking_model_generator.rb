@@ -2,7 +2,6 @@ class BookingModelGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates/models', __FILE__)
 
   def generate_booking_model
-    copy_file "bookable.rb", "app/models/concerns/bookable.rb"
     copy_file "booking.rb", "app/models/booking.rb"
   end
 
