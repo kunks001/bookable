@@ -29,7 +29,7 @@ You can specify a named resource by providing an argument to the rails generate 
 The generator will create the file structure you need to implement booking functionality into your app:
 <ul>
   <li>controllers</li>
-  <li>models - resource and booking</li>
+  <li>models - resource(tennis_court) and booking</li>
   <li>views</li>
   <li>javascript - which uses the jquery fullcalendar plugin</li>
   <li>css - some basic css is provided which you may want to override</li>
@@ -42,8 +42,8 @@ Validations have been created for the models to ensure that a bookable resource 
 
 ## Known Bugs
 <ul>
-  <li>Date validation 30th February - currently if 30th February is booked it will default to 2nd March</li>
-  </li>Implement date validation for above</li>
+  <li>Date validation, for example 30th February is not a valid date but is permitted by the calendar view. Currently if 30th February is booked it will default to 2nd March.</li>
+  <li>Implement server side date validation for above.</li>
 </ul>
 
 ## Contributing
@@ -59,7 +59,14 @@ There are a number of desired features we hope to implement in the future. If yo
 <ul>
   <li>optional description attribute for booking and resource models</li>
   <li>implement show route for bookings</li>
-  <li>provide fix for Known Bug 1</li>
+  <li>provide fix for Known Bugs</li>
+</ul>
+
+## Contributors
+<ul>
+  <li><a href="https://github.com/kunks001">Srikanth Kunkalugunta</a></li>
+  <li><a href="https://github.com/chewymeister">Jon Tsang</a></li>
+  <li<a href="https://github.com/margOnline">Margo Urey</a></li>
 </ul>
 
 ## License
