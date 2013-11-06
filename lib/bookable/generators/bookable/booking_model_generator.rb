@@ -3,8 +3,11 @@ module Bookable
     class BookingModelGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates/models', __FILE__)
 
+      argument :resource_name, :type => :string, :default => "resource"
+
       def generate_booking_model
         copy_file "booking.rb", "app/models/booking.rb"
+        template "bookable.rb", "app/models/concerns/bookable.rb"
       end
 
       def create_booking_migration
