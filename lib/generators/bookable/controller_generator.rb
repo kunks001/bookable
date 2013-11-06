@@ -19,6 +19,7 @@ module Bookable
         def file_name
           resource_name.underscore
         end
+        
     end
   end
 end
