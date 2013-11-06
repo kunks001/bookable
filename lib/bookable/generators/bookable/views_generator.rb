@@ -6,11 +6,11 @@ module Bookable
       argument :bookable_views_name, :type => :string, :default => "resources"
       
       def generate_bookable_views
-        template "_errors.html.erb", "app/views/#{bookable_views_name}/_errors.html.erb"
-        template "_form.html.erb", "app/views/#{bookable_views_name}/_form.html.erb"
-        template "edit.html.erb", "app/views/#{bookable_views_name}/edit.html.erb"
-        template "index.html.erb", "app/views/#{bookable_views_name}/index.html.erb"
-        template "new.html.erb", "app/views/#{bookable_views_name}/new.html.erb"
+        template "_errors.html.erb", "app/views/#{bookable_views_name.pluralize}/_errors.html.erb"
+        template "_form.html.erb", "app/views/#{bookable_views_name.pluralize}/_form.html.erb"
+        template "edit.html.erb", "app/views/#{bookable_views_name.pluralize}/edit.html.erb"
+        template "index.html.erb", "app/views/#{bookable_views_name.pluralize}/index.html.erb"
+        template "new.html.erb", "app/views/#{bookable_views_name.pluralize}/new.html.erb"
 
         template "bookings/_errors.html.erb", "app/views/bookings/_errors.html.erb"
         template "bookings/_form.html.erb", "app/views/bookings/_form.html.erb"
