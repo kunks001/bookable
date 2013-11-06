@@ -33,6 +33,16 @@ module Bookable
       #     "\tend\n"\
       #   "end"
       # end
+
+      private
+
+        def resource_name_underscore
+          resource_name.underscore
+        end
+
+        def resource_name_camelize
+          resource_name.camelize
+        end
       
     end
   end

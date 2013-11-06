@@ -1,11 +1,11 @@
-<h3><%=folder_name.singularize%></h3>
+<h3><%=bookable_views_name.singularize%></h3>
 
-<%% @<%=folder_name%>.each do |resource| %>
+<%% @<%=bookable_views_name%>.each do |resource| %>
   <div class="resource">
     <%%= resource.name %>
-    <%%= link_to "Show all bookings", <%=folder_name.singularize%>_bookings_path(<%=folder_name.singularize%>) %>
-    <%%= link_to "Delete", <%=folder_name.singularize%>_path(<%=folder_name.singularize%>), data: { confirm: 'Are you sure?' }, method: :delete %>
-    <%%= link_to "Edit", edit_<%=folder_name.singularize%>_path(<%=folder_name.singularize%>) %>
-    <%%= link_to "Add booking", new_<%=folder_name.singularize%>_booking_path(<%=folder_name.singularize%>) %>
+    <%%= link_to "Show all bookings", <%=bookable_views_name.singularize%>_bookings_path(<%=bookable_views_name.singularize%>) %>
+    <%%= link_to "Delete", <%=bookable_views_name.singularize%>_path(<%=bookable_views_name.singularize%>), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <%%= link_to "Edit", edit_<%=bookable_views_name.singularize%>_path(<%=bookable_views_name.singularize%>) %>
+    <%%= link_to "Add booking", new_<%=bookable_views_name.singularize%>_booking_path(<%=bookable_views_name.singularize%>) %>
   </div>
 <%% end %>

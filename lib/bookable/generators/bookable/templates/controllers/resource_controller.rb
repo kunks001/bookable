@@ -1,40 +1,40 @@
-class <%= file_name.capitalize %>sController < ApplicationController
+class <%=resource_name_camelize%>sController < ApplicationController
 
   def index
-    @<%= file_name %>s = <%= file_name.capitalize %>.all
+    @<%=resource_name_underscore%>s = <%=resource_name_camelize%>.all
   end
 
   def new
-    @<%= file_name %> = <%= file_name.capitalize %>.new
+    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.new
   end
 
   def create
-    @<%= file_name %> = <%= file_name.capitalize %>.create(<%= file_name %>_params)
-    if @<%= file_name %>.save
-      name = @<%= file_name %>.name
-      redirect_to <%= file_name %>s_path
+    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.create(<%=resource_name_underscore%>_params)
+    if @<%=resource_name_underscore%>.save
+      name = @<%=resource_name_underscore%>.name
+      redirect_to <%=resource_name_underscore%>s_path
       flash[:notice] = "#{name} created"
     else
       render 'new'
-      flash[:error] = "Unable to create <%= file_name %>. Please try again"
+      flash[:error] = "Unable to create <%=resource_name_underscore%>. Please try again"
     end
   end
 
   def destroy
-    @<%= file_name %> = <%= file_name.capitalize %>.find(params[:id])
-    @<%= file_name %>.destroy
-    redirect_to <%= file_name %>s_path
+    @<%=resource_name_underscore%> = <%= resource_name_camelize%>.find(params[:id])
+    @<%=resource_name_underscore%>.destroy
+    redirect_to <%=resource_name_underscore%>s_path
   end
 
   def edit
-    @<%= file_name %> = <%= file_name.capitalize %>.find(params[:id])
+    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.find(params[:id])
   end
 
   def update
-    @<%= file_name %> = <%= file_name.capitalize %>.find(params[:id])
-    @<%= file_name %>.update <%= file_name %>_params
-    if @<%= file_name %>.save
-      flash[:notice] = 'Your <%= file_name %> was updated succesfully'
+    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.find(params[:id])
+    @<%=resource_name_underscore%>.update <%=resource_name_underscore%>_params
+    if @<%=resource_name_underscore%>.save
+      flash[:notice] = "Your <%=resource_name_underscore.gsub(/(_)/, ' ')%> was updated succesfully"
       redirect_to root_path
     else
       render 'edit'
@@ -43,8 +43,8 @@ class <%= file_name.capitalize %>sController < ApplicationController
 
   private
 
-    def <%= file_name %>_params
-      params.require(:<%= file_name %>).permit(:name, :delete)
+    def <%=resource_name_underscore%>_params
+      params.require(:<%=resource_name_underscore%>).permit(:name, :delete)
     end
 
 end
