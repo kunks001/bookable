@@ -38,11 +38,11 @@ The necessary routes will be applied to your routes file.
 
 ## Validations
 
-Validations have been created for the models to ensure that a bookable resource is created with a unique name and bookings are created in the future and resources are not double booked. For further information and an example of how the gem is used, please visit <a href="">this site</a>.
+Validations have been created for the models to ensure that a bookable resource is created with a unique name and bookings are created in the future and resources are not double booked. For further information, refer to the tests and for an example of how the gem is used, visit <a href="">this site</a>.
 
 ## Known Bugs
 <ul>
-  <li>Date validation, for example 30th February is not a valid date but is permitted by the calendar view. Currently if 30th February is booked it will default to 2nd March.</li>
+  <li>Front enddDate validation, for example 30th February is not a valid date but is permitted by the calendar view. Currently if 30th February is booked it will create the booking for 2nd March.</li>
   <li>Implement server side date validation for above.</li>
 </ul>
 
@@ -66,7 +66,7 @@ There are a number of desired features we hope to implement in the future. If yo
 <ul>
   <li><a href="https://github.com/kunks001">Srikanth Kunkalugunta</a></li>
   <li><a href="https://github.com/chewymeister">Jon Tsang</a></li>
-  <li<a href="https://github.com/margOnline">Margo Urey</a></li>
+  <li><a href="https://github.com/margOnline">Margo Urey</a></li>
 </ul>
 
 ## License
