@@ -1,3 +1,6 @@
+module Bookable
+  module Generators
+
 class BookingModelGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates/models', __FILE__)
 
@@ -29,4 +32,7 @@ class BookingModelGenerator < Rails::Generators::Base
   #   "end"
   # end
   
+end
+
+end
 end

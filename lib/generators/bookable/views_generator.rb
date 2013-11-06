@@ -1,4 +1,7 @@
-class BookableViewsGenerator < Rails::Generators::Base
+module Bookable
+  module Generators
+
+class ViewsGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates/views', __FILE__)
 
   argument :bookable_views_name, :type => :string, :default => "resources"
@@ -31,3 +34,7 @@ class BookableViewsGenerator < Rails::Generators::Base
       bookable_views_name.underscore
     end
 end
+
+end
+end
+

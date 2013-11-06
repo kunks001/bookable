@@ -1,3 +1,6 @@
+module Bookable
+  module Generators
+
 class ResourceModelGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates/models', __FILE__)
   argument :resource_name, :type => :string, :default => "resource"
@@ -10,5 +13,7 @@ class ResourceModelGenerator < Rails::Generators::Base
     generate "migration Create#{resource_name.camelize.pluralize} name:string"
   end
   
+end
+end
 end
 

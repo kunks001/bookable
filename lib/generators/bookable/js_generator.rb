@@ -1,4 +1,7 @@
-class BookableJsGenerator < Rails::Generators::Base
+module Bookable
+  module Generators
+
+class JsGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates/assets/javascript', __FILE__)
   argument :bookable_js_name, :type => :string, :default => "resource"
 
@@ -14,4 +17,6 @@ class BookableJsGenerator < Rails::Generators::Base
     bookable_js_name.underscore
   end
 
+end
+end
 end
