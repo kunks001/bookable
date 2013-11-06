@@ -5,9 +5,9 @@ module Bookable
       source_root File.expand_path("../", __FILE__)
 
       def install
-        generate "bookable:resource_model #{options[:resource_name] || ''}"
-        generate "bookable:booking_model"
-        generate "bookable:controller #{options[:resource_name] || ''}"
+        generate "bookable:resource_model #{resource_name}"
+        generate "bookable:booking_model #{resource_name}"
+        generate "bookable:controller #{resource_name}"
         generate "bookable:views"
         generate "bookable:js"
         generate "bookable:css"

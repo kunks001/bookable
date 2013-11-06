@@ -4,7 +4,7 @@ module Bookable
 
   class Railtie <  Rails::Railtie
     generators do
-       require "/lib/generators/bookable"
+      require "generators/bookable/install_generator"
     end
   end
 
