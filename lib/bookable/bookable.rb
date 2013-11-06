@@ -87,7 +87,7 @@ module Bookable
    {  
     :id => self.id,  
     :start => self.start_time,  
-    :end => self.end_time,  
+    :end => self.end_time + 60,  
     :recurring => false, 
     :allDay => false
    }  
