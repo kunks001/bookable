@@ -1,5 +1,7 @@
 # Bookable
 
+[![Gem Version](https://badge.fury.io/rb/bookable.png)](http://badge.fury.io/rb/bookable)
+
 TODO: Write a gem description
 
 ## Installation
