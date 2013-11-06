@@ -13,7 +13,7 @@ module Bookable
       private
 
       def bookable_name
-        bookable_js_name.underscore
+        bookable_js_name.underscore.pluralize
       end
 
     end

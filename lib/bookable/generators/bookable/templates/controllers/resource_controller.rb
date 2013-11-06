@@ -1,18 +1,18 @@
-class <%=resource_name_camelize%>sController < ApplicationController
+class <%=resource_name_camelize.singularize.pluralize%>Controller < ApplicationController
 
   def index
-    @<%=resource_name_underscore%>s = <%=resource_name_camelize%>.all
+    @<%=resource_name_underscore.pluralize%> = <%=resource_name_camelize.singularize%>.all
   end
 
   def new
-    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.new
+    @<%=resource_name_underscore%> = <%=resource_name_camelize.singularize%>.new
   end
 
   def create
-    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.create(<%=resource_name_underscore%>_params)
+    @<%=resource_name_underscore%> = <%=resource_name_camelize.singularize%>.create(<%=resource_name_underscore%>_params)
     if @<%=resource_name_underscore%>.save
       name = @<%=resource_name_underscore%>.name
-      redirect_to <%=resource_name_underscore%>s_path
+      redirect_to <%=resource_name_underscore.pluralize%>_path
       flash[:notice] = "#{name} created"
     else
       render 'new'
@@ -21,17 +21,17 @@ class <%=resource_name_camelize%>sController < ApplicationController
   end
 
   def destroy
-    @<%=resource_name_underscore%> = <%= resource_name_camelize%>.find(params[:id])
+    @<%=resource_name_underscore%> = <%= resource_name_camelize.singularize%>.find(params[:id])
     @<%=resource_name_underscore%>.destroy
-    redirect_to <%=resource_name_underscore%>s_path
+    redirect_to <%=resource_name_underscore.pluralize%>_path
   end
 
   def edit
-    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.find(params[:id])
+    @<%=resource_name_underscore%> = <%=resource_name_camelize.singularize%>.find(params[:id])
   end
 
   def update
-    @<%=resource_name_underscore%> = <%=resource_name_camelize%>.find(params[:id])
+    @<%=resource_name_underscore%> = <%=resource_name_camelize.singularize%>.find(params[:id])
     @<%=resource_name_underscore%>.update <%=resource_name_underscore%>_params
     if @<%=resource_name_underscore%>.save
       flash[:notice] = "Your <%=resource_name_underscore.gsub(/(_)/, ' ')%> was updated succesfully"

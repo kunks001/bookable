@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   respond_to :html, :xml, :json
   
-  before_action :find_resource
+  before_action :find_<%=resource_name_underscore%>
 
   def index
     @bookings = Booking.where("<%=resource_name%>_id = ? AND end_time >= ?", @<%=resource_name%>.id, Time.now).order(:start_time)

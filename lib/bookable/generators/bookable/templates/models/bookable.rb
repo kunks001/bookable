@@ -2,7 +2,7 @@ module Bookable
   extend ActiveSupport::Concern
 
   included do
-    belongs_to :<%=resource_name%>
+    belongs_to :<%=resource_name_underscore%>
 
     validates :start_time, presence: true 
     validates :length, presence: true, numericality: { greater_than: 0 }
@@ -55,11 +55,11 @@ module Bookable
 
   def overlaps
     overlapping_bookings = [ 
-      <%=resource_name%>.bookings.end_during(start_time, end_time),
-      <%=resource_name%>.bookings.start_during(start_time, end_time),
-      <%=resource_name%>.bookings.happening_during(start_time, end_time),
-      <%=resource_name%>.bookings.enveloping(start_time, end_time),
-      <%=resource_name%>.bookings.identical(start_time, end_time)
+      <%=resource_name_underscore%>.bookings.end_during(start_time, end_time),
+      <%=resource_name_underscore%>.bookings.start_during(start_time, end_time),
+      <%=resource_name_underscore%>.bookings.happening_during(start_time, end_time),
+      <%=resource_name_underscore%>.bookings.enveloping(start_time, end_time),
+      <%=resource_name_underscore%>.bookings.identical(start_time, end_time)
     ].flatten
 
     overlapping_bookings.delete self
