@@ -11,7 +11,7 @@ module Bookable
       end
 
       def create_booking_migration
-        generate "migration CreateBookings start_time:datetime end_time:datetime length:integer resource:belongs_to"
+        generate "migration CreateBookings start_time:datetime end_time:datetime length:integer #{resource_name_underscore}:belongs_to"
       end
 
       def generate_datetime_initializer
@@ -33,6 +33,16 @@ module Bookable
       #     "\tend\n"\
       #   "end"
       # end
+
+      private
+
+        def resource_name_underscore
+          resource_name.underscore
+        end
+
+        def resource_name_camelize
+          resource_name.camelize
+        end
       
     end
   end

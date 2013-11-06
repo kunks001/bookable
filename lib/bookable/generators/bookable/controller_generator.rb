@@ -8,16 +8,20 @@ module Bookable
 
       def generate_bookable_controller
         template "booking_controller.rb", "app/controllers/bookings_controller.rb"
-        template "resource_controller.rb", "app/controllers/#{file_name}s_controller.rb"
-        route "resources :#{file_name}s do\n" \
+        template "resource_controller.rb", "app/controllers/#{resource_name_underscore.pluralize}_controller.rb"
+        route "resources :#{resource_name_underscore.pluralize} do\n" \
               "\t  resources :bookings\n" \
               "\tend"
       end
 
       private
 
-        def file_name
+        def resource_name_underscore
           resource_name.underscore
+        end
+
+        def resource_name_camelize
+          resource_name.camelize
         end
         
     end

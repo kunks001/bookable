@@ -12,8 +12,8 @@ module Bookable
 
       private
 
-      def folder_name
-        bookable_js_name.underscore
+      def bookable_name
+        bookable_js_name.underscore.pluralize
       end
 
     end
