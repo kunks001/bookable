@@ -20,12 +20,16 @@ Or install it yourself as:
 
 After you've installed the gem, you need to run the generator:
 
-    rails generate bookable:install
+    $ rails generate bookable:install
+
+You can specify a named resource by providing an argument to the rails generate command e.g. 
+
+    $ rails generate bookable:install tennis_court
 
 The generator will create the file structure you need to implement booking functionality into your app:
 <ul>
   <li>controllers</li>
-  <li>models - resource and booking</li>
+  <li>models - resource(tennis_court) and booking</li>
   <li>views</li>
   <li>javascript - which uses the jquery fullcalendar plugin</li>
   <li>css - some basic css is provided which you may want to override</li>
@@ -34,16 +38,36 @@ The necessary routes will be applied to your routes file.
 
 ## Validations
 
-Validations have been created for the models to ensure that a bookable resource is created with a unique name and bookings are created in the future and resources are not double booked. For further information, please review the test files.
+Validations have been created for the models to ensure that a bookable resource is created with a unique name and bookings are created in the future and resources are not double booked. For further information, refer to the tests and for an example of how the gem is used, visit <a href="">this site</a>.
+
+## Known Bugs
+<ul>
+  <li>Front enddDate validation, for example 30th February is not a valid date but is permitted by the calendar view. Currently if 30th February is booked it will create the booking for 2nd March.</li>
+  <li>Implement server side date validation for above.</li>
+</ul>
 
 ## Contributing
-There are a number of desired features we hope to implement in the future. Please consider contributing in the following manner. 
+There are a number of desired features we hope to implement in the future. If you wish to contribute please do so in the following manner. 
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Desired Features
+<ul>
+  <li>optional description attribute for booking and resource models</li>
+  <li>implement show route for bookings</li>
+  <li>provide fix for Known Bugs</li>
+</ul>
+
+## Contributors
+<ul>
+  <li><a href="https://github.com/kunks001">Srikanth Kunkalugunta</a></li>
+  <li><a href="https://github.com/chewymeister">Jon Tsang</a></li>
+  <li><a href="https://github.com/margOnline">Margo Urey</a></li>
+</ul>
 
 ## License
 
