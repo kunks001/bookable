@@ -1,8 +1,8 @@
 <h3><%=bookable_views_name.pluralize.gsub(/(_)/,' ')%></h3>
 
-<%% @<%=bookable_views_name.pluralize%>.each do |<%=bookable_views_name%>| %>
-  <div class="<%=bookable_views_name%>">
-    <%%= <%=bookable_views_name%>.name %>
+<%% @<%=bookable_views_name.pluralize%>.each do |<%=bookable_views_name.singularize%>| %>
+  <div class="<%=bookable_views_name.singularize%>">
+    <%%= <%=bookable_views_name.singularize%>.name %>
     <%%= link_to "Show all bookings", <%=bookable_views_name.singularize%>_bookings_path(<%=bookable_views_name.singularize%>) %>
     <%%= link_to "Delete", <%=bookable_views_name.singularize%>_path(<%=bookable_views_name.singularize%>), data: { confirm: 'Are you sure?' }, method: :delete %>
     <%%= link_to "Edit", edit_<%=bookable_views_name.singularize%>_path(<%=bookable_views_name.singularize%>) %>

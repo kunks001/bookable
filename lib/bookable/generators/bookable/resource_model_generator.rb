@@ -5,7 +5,7 @@ module Bookable
       argument :resource_name, :type => :string, :default => "resource"
 
       def generate_resource_model
-        template "resource.rb", "app/models/#{resource_name_underscore}.rb"
+        template "resource.rb", "app/models/#{resource_name_underscore.singularize}.rb"
       end
 
       def create_resource_migration
