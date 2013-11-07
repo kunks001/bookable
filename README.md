@@ -22,7 +22,7 @@ After you've installed the gem, you need to run the generator:
 
     $ rails generate bookable:install
 
-You can specify a named resource by providing an argument to the rails generate command e.g. 
+Alternatively you can specify a named resource by providing an argument to the rails generate command e.g. 
 
     $ rails generate bookable:install tennis_court
 
@@ -34,7 +34,9 @@ The generator will create the file structure you need to implement booking funct
   <li>javascript - which uses the jquery fullcalendar plugin</li>
   <li>css - some basic css is provided which you may want to override</li>
 </ul>
-The necessary routes will be applied to your routes file.
+The necessary routes will be applied to your routes file and you will need to run
+
+    $rake db:migrate
 
 ## Validations
 
