@@ -2,7 +2,7 @@ module Bookable
   extend ActiveSupport::Concern
 
   included do
-    belongs_to :<%=resource_name_underscore%>
+    belongs_to :<%=resource_name_underscore.singularize%>
 
     validates :start_time, presence: true 
     validates :length, presence: true, numericality: { greater_than: 0 }
