@@ -44,8 +44,8 @@ Validations have been created for the models to ensure that a bookable resource 
 
 ## Known Bugs
 <ul>
-  <li>Front enddDate validation, for example 30th February is not a valid date but is permitted by the calendar view. Currently if 30th February is booked it will create the booking for 2nd March.</li>
-  <li>Implement server side date validation for above.</li>
+  <li>Front end Date validation, for example 30th February is not a valid date but is permitted by the calendar view. </li>
+  <li>Implement server side date validation for above - currently if a booking for 30th February is entered, the booking will be created for 2nd March.</li>
 </ul>
 
 ## Contributing
