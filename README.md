@@ -36,7 +36,7 @@ The generator will create the file structure you need to implement booking funct
 </ul>
 The necessary routes will be applied to your routes file and you will need to run
 
-    $rake db:migrate
+    $ rake db:migrate
 
 ## Validations
 
