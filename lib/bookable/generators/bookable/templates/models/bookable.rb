@@ -55,11 +55,11 @@ module Bookable
 
   def overlaps
     overlapping_bookings = [ 
-      <%=resource_name_underscore%>.bookings.end_during(start_time, end_time),
-      <%=resource_name_underscore%>.bookings.start_during(start_time, end_time),
-      <%=resource_name_underscore%>.bookings.happening_during(start_time, end_time),
-      <%=resource_name_underscore%>.bookings.enveloping(start_time, end_time),
-      <%=resource_name_underscore%>.bookings.identical(start_time, end_time)
+      <%=resource_name_underscore.singularize%>.bookings.end_during(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.start_during(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.happening_during(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.enveloping(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.identical(start_time, end_time)
     ].flatten
 
     overlapping_bookings.delete self
