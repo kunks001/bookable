@@ -8,7 +8,7 @@ Bookable is a Rails 4.0 gem that enables you to add resource booking functionali
 
 Bookable works with Rails 4.0. Add this line to your application's Gemfile:
 
-    gem 'bookable', '~> 0.0.4'
+    gem 'bookable', '~> 0.0.52'
 
 Then execute:
 
@@ -40,7 +40,7 @@ The necessary routes will be applied to your routes file and you will need to ru
 
 ## Validations
 
-Validations have been created for the models to ensure that a bookable resource is created with a unique name and bookings are created in the future and resources are not double booked. For further information, refer to the tests and for an example of how the gem is used, visit <a href="">this site</a>.
+Validations have been created for the models to ensure that a bookable resource is created with a unique name and bookings are created in the future and resources are not double booked. For further information, refer to the tests and for an example of how the gem is used, visit <a href="http://cafe-reviews.herokuapp.com/cafes/1/tables/">this site</a>.
 
 ## Known Bugs
 <ul>
