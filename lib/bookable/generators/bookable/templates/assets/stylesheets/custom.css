@@ -10,11 +10,11 @@
   padding: 10px;
 }
 
-input[type="number"] { 
+.bookings_table input[type="number"] { 
   width:30px; 
 }
 
-table{
+.bookings_table{
   font-size: 14px;
   color: gray;
 }
