@@ -12,45 +12,17 @@ module Bookable
     before_validation :calculate_end_time
   
 
-    scope :end_during, ->(new_start_time, new_end_time) do
-      if (!new_start_time.nil?) && (!new_end_time.nil?)
-        where('end_time > ? AND end_time < ?', new_start_time, new_end_time)
-      else
-        return nil
-      end
+    scope :time_constraint, ->(c1, f1, c2, f2) do
+      return nil unless f1 && f2
+      where "%s ? AND %s ?" % [c1, c2], f1, f2
     end
 
-    scope :start_during, ->(new_start_time, new_end_time) do
-      if (!new_start_time.nil?) && (!new_end_time.nil?)
-        where('start_time > ? AND start_time < ?', new_start_time, new_end_time)
-      else
-        return nil
-      end
-    end
+    scope :end_during,       ->(start_time, end_time) { time_constraint "end_time >",   start_time, "end_time <",   end_time }
+    scope :start_during,     ->(start_time, end_time) { time_constraint "start_time >", start_time, "start_time <", end_time }
+    scope :happening_during, ->(start_time, end_time) { time_constraint "start_time >", start_time, "end_time <",   end_time }
+    scope :enveloping,       ->(start_time, end_time) { time_constraint "start_time <", start_time, "end_time >",   end_time }
+    scope :identical,        ->(start_time, end_time) { time_constraint "start_time =", start_time, "end_time =",   end_time }
 
-    scope :happening_during, ->(new_start_time, new_end_time) do
-      if (!new_start_time.nil?) && (!new_end_time.nil?)
-        where('start_time > ? AND end_time < ?', new_start_time, new_end_time)
-      else
-        return nil
-      end 
-    end
-
-    scope :enveloping, ->(new_start_time, new_end_time) do
-      if (!new_start_time.nil?) && (!new_end_time.nil?)
-        where('start_time < ? AND end_time > ?', new_start_time, new_end_time)
-      else
-        return nil
-      end
-    end
-
-    scope :identical, ->(new_start_time, new_end_time) do
-      if (!new_start_time.nil?) && (!new_end_time.nil?)
-        where('start_time = ? AND end_time = ?', new_start_time, new_end_time)
-      else
-        return nil
-      end
-    end
   end
 
   def overlaps
