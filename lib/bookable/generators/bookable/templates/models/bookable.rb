@@ -27,11 +27,11 @@ module Bookable
 
   def overlaps
     overlapping_bookings = [ 
-      <%=resource_name_underscore.singularize%>.bookings.end_during(:end_during),
-      <%=resource_name_underscore.singularize%>.bookings.start_during(:start_during),
-      <%=resource_name_underscore.singularize%>.bookings.happening_during(:happening_during),
-      <%=resource_name_underscore.singularize%>.bookings.enveloping(:enveloping),
-      <%=resource_name_underscore.singularize%>.bookings.identical(:identical)
+      <%=resource_name_underscore.singularize%>.bookings.end_during(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.start_during(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.happening_during(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.enveloping(start_time, end_time),
+      <%=resource_name_underscore.singularize%>.bookings.identical(start_time, end_time)
     ].flatten
     
     overlapping_bookings.delete self
