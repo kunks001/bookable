@@ -11,7 +11,7 @@ module Bookable
         template "resource_controller.rb", "app/controllers/#{resource_name_underscore.pluralize}_controller.rb"
         route "resources :#{resource_name_underscore.pluralize} do\n" \
               "\t  resources :bookings\n" \
-              "\tend"
+              "\tend\n"
       end
 
       private
