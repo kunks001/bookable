@@ -18,10 +18,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib","lib/bookable","lib/bookable/generators", "lib/bookable/generators/bookable"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake"
  
-  spec.add_dependency 'jbuilder', '~> 1.2'
+  spec.add_dependency 'jbuilder', '~> 2.9'
   spec.add_dependency 'rails_12factor'
 
 end
